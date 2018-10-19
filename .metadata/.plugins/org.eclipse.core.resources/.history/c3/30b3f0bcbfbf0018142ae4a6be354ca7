@@ -1,0 +1,5 @@
+package com.servasoft.crm.web.filter;
+
+public class CharacterEncodingFilter {
+
+}

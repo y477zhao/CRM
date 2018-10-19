@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.servasoft.crm.settings.dao.DicTypeDao">
+	
+	<select id="getByCode" resultType="DicType">
+		select * from
+			tbl_dic_type 
+		where 
+			code = #{code}
+	</select>
+	
+	<insert id="save" parameterType="Dictype">
+		insert into tbl_dic_type
+			(code, name, description)
+		values
+			(#{code}, #{name}, #{description})
+	</insert>
+	
+	<select id="listAll" resultType="DicType">
+		select * from tbl_dic_type 
+	</select>
+	
+	<delete id="deleteByCodes">
+		delete from 
+			tbl_dic_type 
+		where 
+			code 
+		in
+		<foreach collection="array" item="code" separator="," open="(" close=")">
+		#{code}
+		</foreach>
+	</delete>
+	
+</mapper>
