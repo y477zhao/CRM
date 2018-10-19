@@ -1,7 +1,7 @@
 # CRM (Customer Relationship Management)
 A Java Web project which implemented the maintenance of the relationship between the company system and the customers' information, in which **MySQL 5.5** and **Apache Tomcat 9.0** are used for database and server respectively. This project consists of three parts: **Frontend, Backend and Database**. Several programming languages and other technologies are used and they are list below.
 
-Front-end (*Under the directory crm/WebContent *)
+Front-end (*Under the directory crm/WebContent*)
 - Programming Language
   - HTML5/CSS3
   - Javascript
@@ -11,7 +11,7 @@ Front-end (*Under the directory crm/WebContent *)
   - JSTL (JSP Standard Tag Library)
   - Bootstrap
 
-Backend (*Under the directory crm/src *)
+Backend (*Under the directory crm/src*)
 - Programming Language
   - Java
 - Framwork  and Design Pattern
