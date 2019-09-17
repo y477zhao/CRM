@@ -1,0 +1,22 @@
+日历控件
+	
+	1、bootstrap datetimepicker（时间/日期选择器）
+	
+	2、datetimepicker是基于bootstrap扩展的，所以使用datetimepicker需要引入：
+		第一：首先引入jquery ( 1个js )
+		第二：再引入bootstrap ( 1个js + 1个css )
+		第三：最后引入datetimepicker相关的库 ( 2个js + 1个css )
+		
+		注意：引入顺序（B依赖A，则必须先引入A，再引入B。）
+	
+	3、大部分的前端插件都是需要引入：
+		css + js
+	
+	4、bootstrap datetimepicker插件是一个完全的前端插件，日历插件，和服务端的java程序无关。测试这个插件的时候创建一个html文件即可。
+	
+	5、日历的插件/控件很多，我们这里为什么要选择bootstrap datetimepicker？
+		为了风格统一。因为前端UI框架使用的是bootstrap，为了保证风格一致，所以我们CRM项目中所有的前端插件都是基于bootstrap扩展的。
+	
+	6、bootstrap datetimepicker插件压缩之后的js文件在FF浏览器中存在兼容问题，其他浏览器没事。
+		bootstrap-datetimepicker.min.js
+		我们这里使用完整版的：bootstrap-datetimepicker.js

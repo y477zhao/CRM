@@ -1,22 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.servasoft.crm.settings.web.controller.DicTypeController"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
-<fullyQualifiedTypeName name="org.omg.CORBA.PRIVATE_MEMBER"/>
-<fullyQualifiedTypeName name="com.servasoft.crm.settings.service.impl.DicTypeService"/>
-<fullyQualifiedTypeName name="com.servasoft.crm.utils.SqlSessionUtil"/>
-<fullyQualifiedTypeName name="com.servasoft.crm.settings.dao.DicTypeDao"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
-<fullyQualifiedTypeName name="com.servasoft.crm.settings.service.DicTypeService"/>
-<fullyQualifiedTypeName name="com.servasoft.crm.utils.TransactionHandler"/>
-<fullyQualifiedTypeName name="com.servasoft.crm.settings.service.impl.DicTypeServiceImpl"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="com.servasoft.crm.settings.domain.DicType"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="javax.servlet.Filter"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="javax.security.auth.message.callback.PrivateKeyCallback.Request"/>
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>

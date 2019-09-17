@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wkcto.crm.settings.dao.DeptDao">
+
+	<insert id="save" parameterType="Dept">
+		insert into tbl_dept
+			(no,name,manager,phone,description)
+		values
+			(#{no},#{name},#{manager},#{phone},#{description})
+	</insert>
+	
+	<select id="getAll" resultType="Dept">
+		select * from tbl_dept
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

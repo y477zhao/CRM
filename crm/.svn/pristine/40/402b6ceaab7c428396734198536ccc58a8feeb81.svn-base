@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wkcto.crm.workbench.dao.ActivityDao">
+	
+	<select id="getActivityByName" resultType="Activity">
+		
+		select act.id,act.name,act.startDate,act.endDate,user.name as owner
+		from tbl_activity act
+		join tbl_user user
+		on act.owner=user.id
+		where act.name like '%' #{value} '%'
+	
+	</select>
+	
+	<select id="getByNameAndClueId" resultType="Activity">
+		select
+			a.id, a.name, u.name as owner, a.startDate, a.endDate
+		from
+			tbl_activity a
+		join
+			tbl_user u
+		on
+			a.owner = u.id
+		where
+			a.name like '%' #{arg0} '%'
+		and
+			a.id not in(select activityId from tbl_clue_activity_relation where clueId = #{arg1})
+	</select>
+	
+	<insert id="saves" parameterType="Activity">
+		insert into tbl_activity
+			(id,owner,name,startDate,endDate,cost,description,createBy,createTime,editBy,editTime)
+		values
+			<foreach collection="list" item="a" separator=",">
+			(#{a.id},#{a.owner},#{a.name},#{a.startDate},#{a.endDate},#{a.cost},#{a.description},#{a.createBy},#{a.createTime},#{a.editBy},#{a.editTime})
+			</foreach>
+	</insert>
+	
+	<select id="getByIds" resultType="Activity">
+		select 
+			*
+		from
+			tbl_activity
+		where
+			id in
+		<foreach collection="array" item="id" separator="," open="(" close=")">
+		#{id}
+		</foreach>
+		order by
+			createTime desc
+	</select>
+	
+	<select id="getAll" resultType="Activity">
+		select * from tbl_activity order by createTime desc
+	</select>
+	
+	<select id="getById2" resultType="Activity">
+		select
+			a.id, u.name as owner, a.name, a.startDate, a.endDate, 
+			a.cost, a.description, a.createTime, a.createBy, a.editTime, a.editBy
+		from
+			tbl_activity a
+		join
+			tbl_user u
+		on
+			a.owner = u.id
+		where
+			a.id = #{id}
+	</select>
+	
+	<update id="update" parameterType="Activity">
+		update tbl_activity set
+			owner       = #{owner},
+			name        = #{name},
+			startDate   = #{startDate},
+			endDate     = #{endDate},
+			cost        = #{cost},
+			description = #{description},
+			editBy      = #{editBy},
+			editTime    = #{editTime}
+		where
+			id = #{id}
+	</update>
+	
+	<select id="getById" resultType="Activity">
+		select * from tbl_activity where id = #{id}
+	</select>
+	
+	<delete id="deleteByIds">
+		delete from tbl_activity where id in
+		<foreach collection="array" item="id" separator="," open="(" close=")">
+		#{id}
+		</foreach>
+	</delete>
+	
+	<insert id="save" parameterType="Activity">
+		insert into tbl_activity
+			(id,owner,name,startDate,endDate,cost,description,createBy,createTime,editBy,editTime)
+		values
+			(#{id},#{owner},#{name},#{startDate},#{endDate},#{cost},#{description},#{createBy},#{createTime},#{editBy},#{editTime})
+	</insert>
+
+	<select id="getTotalByCondition" parameterType="Map" resultType="Long">
+		select
+			count(*)
+		from
+			tbl_activity a
+		join
+			tbl_user u
+		on
+			a.owner = u.id
+		<where>
+			<if test="name1 != null and name1 != ''"> <!-- name1 != null 这里的“name1”是map集合的key -->
+				and a.name like '%' #{name1} '%'
+			</if>
+			<if test="owner1 != null and owner1 != ''">
+				and u.name like '%' #{owner1} '%'
+			</if>
+			<if test="startDate1 != null and startDate1 != ''">
+				and a.startDate &gt;= #{startDate1}
+			</if>
+			<if test="endDate1 != null and endDate1 != ''">
+				and a.endDate &lt;= #{endDate1}
+			</if>
+		</where>
+	</select>
+	
+	<select id="getDataListByCondition" parameterType="Map" resultType="Activity">
+		select
+			a.id, a.name, u.name as owner, a.startDate, a.endDate
+		from
+			tbl_activity a
+		join
+			tbl_user u
+		on
+			a.owner = u.id
+		<where>
+			<if test="name1 != null and name1 != ''"> <!-- name1 != null 这里的“name1”是map集合的key -->
+				and a.name like '%' #{name1} '%'
+			</if>
+			<if test="owner1 != null and owner1 != ''">
+				and u.name like '%' #{owner1} '%'
+			</if>
+			<if test="startDate1 != null and startDate1 != ''">
+				and a.startDate &gt;= #{startDate1}
+			</if>
+			<if test="endDate1 != null and endDate1 != ''">
+				and a.endDate &lt;= #{endDate1}
+			</if>
+		</where>
+		order by
+			a.createTime desc
+		limit
+			#{startIndex1} , #{pageSize1}
+	</select>	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

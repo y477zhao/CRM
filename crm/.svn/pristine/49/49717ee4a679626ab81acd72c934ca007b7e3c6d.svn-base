@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wkcto.crm.workbench.dao.ContactsActivityRelationDao">
+	
+	<insert id="saves" parameterType="ContactsActivityRelation">
+		insert into tbl_contacts_activity_relation values
+		<foreach collection="list" item="car" separator=",">
+		(#{car.id},#{car.contactsId},#{car.activityId})
+		</foreach>
+	</insert>
+	
+</mapper>

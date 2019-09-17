@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<base href="http://192.168.132.2:8080/bs_datetimepicker/">
+		<title>bootstrap datetimepicker</title>
+		<meta charset="UTF-8">
+		
+		<!-- jquery -->
+		<script type="text/javascript" src="jquery/jquery-1.11.1-min.js"></script>
+		
+		<!-- bootstrap -->
+		<link rel="stylesheet" type="text/css" href="jquery/bootstrap_3.3.0/css/bootstrap.min.css">
+		<script type="text/javascript" src="jquery/bootstrap_3.3.0/js/bootstrap.min.js"></script>
+		
+		<!-- datetimepicker -->
+		<link rel="stylesheet" type="text/css" href="jquery/bs_datetimepicker/css/bootstrap-datetimepicker.min.css">
+		<script type="text/javascript" src="jquery/bs_datetimepicker/js/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="jquery/bs_datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+		
+		<script type="text/javascript">
+		
+			$(function(){
+				
+				// 给id="timeInput"的控件绑定日历插件。
+				$("#timeInput").datetimepicker({
+					language : "zh-CN",
+					format : "yyyy-mm-dd hh:ii:ss",  // 设置显示的日期格式
+					autoclose : true, // 设置日历插件选择日期之后自动关闭
+					minView : "hour", // 显示的最小视图
+					todayBtn : true,  // 设置是否显示“今天”按钮
+					clearBtn : true
+				});
+				
+			});
+		
+		</script>
+	</head>
+	<body>
+		
+		<!-- 在页面上给一个控件，将日历绑定到该控件上。 -->
+		<input type="text" id="timeInput" readonly="readonly">
+		 
+	</body>
+</html>

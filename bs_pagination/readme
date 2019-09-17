@@ -1,0 +1,17 @@
+bootstrap pagination 插件，专门负责完成分页查询当中的翻页功能
+
+1、pagination插件很多，easyui的有，layui的也有，基于jquery实现的pagination也是有的。
+我们这里选择bootstrap pagination ，目的是风格统一。
+
+2、使用bootstrap pagination插件需要引入什么？
+	第一：引入jquery (1个js)
+	第二：引入bootstrap(1个js，一个css)
+	第三：引入pagination(1个css，两个js)
+
+3、官方地址：
+
+	https://www.pontikis.net/labs/bs_pagination/
+	
+	demo地址：https://www.pontikis.net/labs/bs_pagination/demo/
+	
+	文档地址：https://www.pontikis.net/labs/bs_pagination/docs/

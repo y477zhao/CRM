@@ -5,7 +5,8 @@
 <configuration>
 	<properties resource="jdbc.properties" />
 	<typeAliases>
-		<package name="com.servasoft.crm.settings.domain"/>
+		<package name="com.wkcto.crm.settings.domain"/>
+		<package name="com.wkcto.crm.workbench.domain"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -19,6 +20,7 @@
 		</environment>
 	</environments>
 	<mappers>
-		<package name="com.servasoft.crm.settings.dao"/>
+		<package name="com.wkcto.crm.settings.dao"/>
+		<package name="com.wkcto.crm.workbench.dao"/>
 	</mappers>
 </configuration>

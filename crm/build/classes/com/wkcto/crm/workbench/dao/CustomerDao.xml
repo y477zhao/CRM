@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wkcto.crm.workbench.dao.CustomerDao">
+
+	<select id="getCustomerNameByName" parameterType="string" resultType="string">
+	
+		select name
+		from tbl_customer
+		where name like '%' #{name} '%'
+	
+	</select>
+
+	<insert id="save" parameterType="Customer">
+		insert into tbl_customer values
+		(#{id},#{owner},#{name},#{website},#{phone},#{description},#{contactSummary},#{nextContactTime},#{address},#{createBy},#{createTime},#{editBy},#{editTime})
+	</insert>
+	
+	<insert id="save1" parameterType="Customer">
+		insert into tbl_customer values
+		(#{id},#{owner},#{name},#{website},#{phone},#{description},#{contactSummary},#{nextContactTime},#{address},#{createBy},#{createTime},#{editBy},#{editTime})
+	</insert>
+	
+	<select id="getByName" resultType="Customer">
+		select * from tbl_customer where name = #{name}
+	</select>
+
+</mapper>

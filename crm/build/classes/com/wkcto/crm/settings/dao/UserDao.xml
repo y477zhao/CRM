@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wkcto.crm.settings.dao.UserDao">
+	
+	<select id="getAll" resultType="User">
+		select * from tbl_user
+	</select>
+	
+	<insert id="save" parameterType="User">
+		insert into tbl_user
+			(id,loginAct,name,loginPwd,email,expireTime,lockState,deptno,allowIps,createBy,createTime,editBy,editTime)
+		values
+			(#{id},#{loginAct},#{name},#{loginPwd},#{email},#{expireTime},#{lockState},#{deptno},#{allowIps},#{createBy},#{createTime},#{editBy},#{editTime})
+	</insert>
+	
+	<select id="getByLoginActAndLoginPwd" resultType="User">
+		select * from tbl_user where loginAct = #{arg0} and loginPwd = #{arg1}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

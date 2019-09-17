@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="32" key="passwordStores.location.y"/>
+	<item value="586" key="passwordStores.size.y"/>
+	<item value="0" key="passwordStores.location.x"/>
+	<item value="1920" key="passwordStores.size.x"/>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="https://192.168.132.2/svn/crm"/>
+		</list>
+	</section>
 </section>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wkcto.crm.workbench.dao.ClueActivityRelationDao">
+
+	<delete id="deleteByClueId">
+		delete from tbl_clue_activity_relation where clueId = #{clueId}
+	</delete>
+
+	<select id="getActivityIdByClueId" resultType="String">
+		select activityId from tbl_clue_activity_relation where clueId = #{clueId}
+	</select>
+
+	<insert id="saves" parameterType="ClueActivityRelation">
+		insert into tbl_clue_activity_relation
+			(id,clueId,activityId)
+		values
+			<foreach collection="list" item="car" separator=",">
+			(#{car.id},#{car.clueId},#{car.activityId})
+			</foreach>
+	</insert>
+
+	<delete id="deleteById">
+		delete from tbl_clue_activity_relation where id = #{id}
+	</delete>
+		
+	<select id="getActivityByClueId" resultType="Map">
+		select
+			 a.name,u.name as owner,a.startDate,a.endDate,car.id as relationId
+		from
+			tbl_activity a 
+		join
+			tbl_user u
+		on	
+			a.owner = u.id
+		join
+			tbl_clue_activity_relation car
+		on
+			a.id = car.activityId
+		where
+			car.clueId = #{clueId}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

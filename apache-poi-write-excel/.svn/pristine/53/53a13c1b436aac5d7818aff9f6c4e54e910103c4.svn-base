@@ -1,0 +1,9 @@
+使用apache poi组件写excel文件。
+
+	excel文件有版本区别：
+		excel2003..excel.xls
+		excel2010..excel.xlsx
+	
+	poi对于不同版本的excel有不同的类库（API）。
+	
+	我们这个项目主要研究xxx.xlsx文件。(2010版之后的。)
